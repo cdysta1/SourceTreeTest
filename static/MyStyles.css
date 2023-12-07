@@ -1,0 +1,308 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.navbar{
+    position: fixed;
+    opacity: 1;
+    width: 84%;
+    display: flex;
+    align-items: center;
+    min-height: 100px;
+    border-bottom: 1px #E7E7E7 solid;
+    fill: white;
+    z-index: 999;
+}
+
+.logo{
+    width:195px;
+    cursor: pointer;
+    margin: 29px 0;
+}
+
+.logo:hover{
+    border-radius: 21px;
+    box-shadow: 0px 4px 15px 0px rgba(123, 90, 255, 0.50);
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 71px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #160647;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+nav ul li a:hover{
+    color: #7B5AFF;
+}
+
+.row{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.columnL{
+    width: 590px;
+    height: 924px;
+    position: relative;
+}
+
+.columnL h2{
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#text1{
+    font-size: 22px;
+    font-weight: 400;
+    color: #160647;
+    margin-top: 48px;
+    width: 535px;
+}
+
+#text2{
+    font-size: 22px;
+    font-weight: 400;
+    color: #160647;
+    margin-top: 12px;
+    width: 535px;
+    margin-bottom: 120px;
+}
+
+#BannerHL1{
+    width: fit-content;
+    background: linear-gradient(90deg, #4A25E1 0%, #7B5AFF 65.12%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 220px;
+}
+
+.StartButton{
+    padding: 12px 60px;
+    align-content: center;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #4A25E1 0%, #7B5AFF 100%);
+    border: 0;
+    cursor: pointer;
+
+}
+
+.StartButton:hover{
+    background: linear-gradient(90deg, #7554FF 0%, #A892FF 100%);
+    box-shadow: 0px 4px 15px 0px rgba(123, 90, 255, 0.50);
+}
+
+.columnR{
+    flex-basis:40%;
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.robot{
+    width: 590px;
+    height: 924px;
+}
+
+.Footer{
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    width: 84%;
+    min-height: 160px;
+    z-index: 999;
+}
+
+#UserInput{
+    width: 74%;
+    height: 33px;
+    align-items: center;
+    border-radius: 35px;
+    border: 1px solid #E7E7E7;
+    font-weight: 400;
+    font-size: 22px;
+    color: #160647;
+    text-align: center;
+    padding: 18px 35px;
+    margin-right: 2%;
+    margin-top: 24px;
+}
+
+#Submission{
+    align-content: center;
+    height: 69px;
+    width: 24%;
+    border-radius: 35px;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(90deg, #4A25E1 0%, #7B5AFF 100%);
+    border: 0;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+#Submission:hover{
+    background: linear-gradient(90deg, #7554FF 0%, #A892FF 100%);
+    box-shadow: 0px 4px 15px 0px rgba(123, 90, 255, 0.50);
+}
+
+.ChatArea{
+    display: flex;
+    margin-top: 100px;
+    margin-bottom:260px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.QuestionArea{
+    margin-top: 150px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.QuestionBox{
+    position: relative;
+    width: 90%;
+    min-height: 33px;
+    align-items: center;
+    border-radius: 14px;
+    border: 1px #E7E7E7 solid;
+    padding: 20px 34px;
+}
+
+#questionbox{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: #160647;
+    word-wrap: break-word;
+}
+
+.UserAvatar{
+    width: 36px;
+    height: 36px;
+    padding: 12px;
+    border-radius: 30px;
+    border: 1px #E7E7E7 solid;
+    margin-top: 6px;
+    margin-left: 20px;
+}
+
+.AnswerArea{
+    margin-top: 30px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.AIAvatar{
+    width: 36px;
+    height: 36px;
+    padding: 12px;
+    border-radius: 30px;
+    border: 0;
+    background: linear-gradient(45deg, #4A25E1 14.82%, #7B5AFF 84.93%);
+    margin-top: 6px;
+    margin-right: 20px;
+}
+
+#AnswerBox{
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    width: 90%;
+    min-height: 43px;
+    height: fit-content;
+    align-items: center;
+    text-align: left;
+    border-radius: 14px;
+    border: 0;
+    box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+.AnswerText{
+    display: flex;
+    height: fit-content;
+    margin: 20px 34px;
+}
+
+#answertext{
+    font-size: 22px;
+    font-weight: 400;
+    color: #160647;
+    word-wrap: break-word;
+}
+
+.ActionButton{
+    position: relative;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 28px;
+}
+
+#CopyButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: 10px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 0;
+    background: #7B5AFF;
+    padding: 12px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#RegenerateButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: 0;
+    background: #E7E7E7;
+    padding: 12px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}

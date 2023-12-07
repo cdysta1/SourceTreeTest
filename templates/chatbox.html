@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyAIAssistant</title>
+    <link rel="stylesheet" type="text/css" href="static/MyStyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"><!--Poppins-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,1,0" /><!--Icons-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /><!--Button Icons-->
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="static/images/Logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="http://localhost:5000/home">Home</a></li>
+                    <li><a href="">Forum</a></li>
+                    <li><a href="">Reference</a></li>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="ChatArea">
+            <div class="QuestionArea">
+                <div class="UserAvatar" style="visibility: hidden"><img src="static/images/Person.svg"></div>
+                <div class="QuestionBox"><div id="questionbox"></div></div>
+                <div class="UserAvatar"><img src="static/images/Person.svg"></div>
+            </div>
+            <div class="AnswerArea">
+                <div class="AIAvatar"><img src="static/images/Agent.svg"></div>
+                <div id="AnswerBox">
+                    <div class="AnswerText"><div id="answertext"></div></div>
+                    <div class="ActionButton">
+                        <button id="CopyButton" onclick="copyToClipboard()">Copy&nbsp;<span class="material-symbols-outlined" style="color: white">content_copy</span></button>
+                        <button id="RegenerateButton" onclick="sendName()">Regenerate&nbsp;<span class="material-symbols-outlined" style="color: white">refresh</span></button>
+                    </div>
+                </div>
+                <div class="AIAvatar" style="visibility: hidden"><img src="static/images/Agent.svg"></div>
+            </div>
+        </div>
+        <div class="Footer">
+            <input type="text" id="UserInput">
+            <button id="Submission" onclick="sendName()">Submit</button>
+        </div>
+    </div>
+</body>
+<script>
+    function sendName(){
+        var inputBoxText = document.getElementById("UserInput");
+        var nameToSend = inputBoxText.value;
+        var greetingElement = document.getElementById("answertext");
+        var greetingReceived = document.getElementById("questionbox")
+        var url = "http://localhost:5000/chatbox/input?name=" + encodeURIComponent(nameToSend);
+        var xml = new XMLHttpRequest();
+        xml.open("GET", url, true);
+        xml.onreadystatechange = function (){
+            if(xml.readyState === 4 && xml.status === 200){
+                var response;
+                response = xml.responseText;
+                greetingReceived.innerHTML = nameToSend;
+                greetingElement.innerHTML = response;
+
+           }
+        };
+        xml.send();
+    }
+
+    function copyToClipboard() {
+       const textToCopy = document.getElementById("answertext").innerText;
+        navigator.clipboard.writeText(textToCopy)
+            .then(() => {
+                console.log("文字已复制到剪贴板");
+                alert("The answer is copied to clipboard successfully!");
+            })
+            .catch((error) => {
+                console.error("复制失败:", error);
+            });
+    }
+</script>
+</html>
